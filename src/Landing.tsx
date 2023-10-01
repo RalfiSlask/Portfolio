@@ -1,5 +1,6 @@
 // components/Landing.tsx
 import React from 'react';
+import ContactForm from './ContactForm';
 
 const Landing: React.FC = () => {
   return (
@@ -35,7 +36,7 @@ const Landing: React.FC = () => {
         <section id="contact">
           {/* Your Contact content here */}
         </section>
-        
+        <ContactForm />
         <footer>
             
           {}
