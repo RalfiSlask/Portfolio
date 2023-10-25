@@ -1,10 +1,14 @@
+import Footer from "./Footer"
+import Header from "./Header"
 import Landing from "./Landing"
 
 const Home = () => {
   return (
-    <div>
-        <Landing />
-    </div>
+    <>
+      <Header />
+      <Landing />
+      <Footer />
+    </>
   )
 }
 
