@@ -1,6 +1,127 @@
 @import "./vendor/reset";
+@import "_variables";
 
 * {
     box-sizing: border-box;
 }
 
+body, html {
+    overflow-y: auto;
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+    z-index: 1000; 
+    box-shadow: 0 0 6px $greenColor;
+}
+
+h1, h2 {
+    font-family: 'Fira Code', monospace;
+}
+
+.custom-cursor.active {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 12px $greenColor;
+}
+
+.custom-cursor::before {
+    width: 30px;
+    height: 30px;
+}
+
+.custom-cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    background-color: gray;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 0.3s ease-out, height 0.3s ease-out;
+}
+
+.custom-cursor.active::before {
+    width: 0px;
+    height: 0px;
+}
+
+.hoverable {
+    position: relative;
+    cursor: pointer; 
+    display: inline-block; 
+    padding-bottom: 4px;
+}
+
+.hoverable::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    right: 50%; /* Using right along with left for the same effect */
+    width: auto; /* Width is now managed by left and right properties */
+    height: 1px;
+    background-color: white;
+    transition: left 0.3s ease-out, right 0.3s ease-out; /* Adjusting the transition to left and right */
+    z-index: -1;
+    border-radius: 1px 0 0 1px; /* Initial state with left edge rounded */
+}
+
+.hoverable:hover::before {
+    left: -10%; /* 10% extension on both sides */
+    right: -10%;
+    border-radius: 1px; /* All edges rounded on hover */
+}
+
+.darkmode-toggle {
+    transition: transform 0.3s ease;
+}
+
+.darkmode-toggle:hover {
+    transform: rotate(180deg);  /* Rotates the icon by 180 degrees */
+}
+  
+.nav-container {
+    position: fixed;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Increased gap for better visibility when scaled */
+    z-index: 10; /* Ensure it's above other elements */
+    .nav-square {
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+        transform: scale(1); /* Start with normal scale */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
+        border-radius: 50%; /* Default as circle */
+        &:hover {
+            background-color: #888; /* Darker shade on hover */
+            transform: scale(1.1); /* Slightly scaled up on hover */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Enhance shadow on hover */
+        }
+    }
+}
+
+.nav-square.active {
+        background-color: $greenColor;
+        transform: scale(1.2); /* Scaled up more than on hover */
+        border: 2px solid white; /* White border for distinction */
+        box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); /* Colorful shadow for active state */
+        border-radius: 4px; /* Transforming it to a soft square */
+}
