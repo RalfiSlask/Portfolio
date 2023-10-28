@@ -1,10 +1,11 @@
-import ContactForm from "./ContactForm"
+import ContactForm from "./ContactForm";
+import PageHeading from "../../components/headings/PageHeading";
 
 const Contact = () => {
   return (
-    <section id="page-4" className="flex justify-center min-h-screen bg-[#999999]">
+    <section id="page-4" className="flex justify-center min-h-screen bg-lightgray">
       <div className=' flex flex-col gap-10 font-secondary'>
-        <h2 className="text-[3rem] font-bold">Contact</h2>
+        <PageHeading text="Contact"/>
         <p>Get in touch or shoot me an email directly on nilssonnarki@gmail.com</p>
         <ContactForm />
       </div>

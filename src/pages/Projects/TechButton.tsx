@@ -4,7 +4,7 @@ type TechButtonProps = {
 
 const TechButton: React.FC<TechButtonProps> = ( {text} ) => {
   return (
-    <button className="rounded-[15px] bg-black flex justify-center items-center px-3 py-1">{text}</button>
+    <button className="rounded-[15px] bg-black flex justify-center items-center px-3 py-1 text-white">{text}</button>
   )
 }
 

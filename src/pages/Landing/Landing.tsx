@@ -1,16 +1,13 @@
 import AnchorText from "./AnchorText";
 import WebdevLogos from "../../WebdevLogos";
-
+import AnimatedHeading from "./AnimatedHeading";
+import CommandPrompt from "./CommandPrompt";
 
 const Landing = () => {
   return (
-    <section id="page-1" className="flex flex-col bg-[#d1d0d0] items-center min-h-screen gap-10">
+    <section id="page-1" className="flex flex-col bg-[#d1d0d0] items-center min-h-screen gap-10 border-b border-solid border-mediumGray">
       <div className="flex flex-col gap-8 pt-[150px] max-w-[620px]">
-{/*         {<img src={image1} alt="background" className="w-full min-h-screen object-cover"/>} */}
-        <div>
-          <p className="text-[1.75rem] text-black font-fourth">Hi, I'm</p>
-          <h1 className="text-[3rem] text-mediumGray font-bold">Matthias Nilsson</h1>
-        </div>
+        <AnimatedHeading />
         <div className="flex flex-col gap-4">
           <p className="text-[1rem] text-mediumGray leading-9 font-medium font-fourth tracking-wide">
               Welcome to my digital canvas. While I'm still early in my career, my <AnchorText text="Projects"/> reflect a strong passion for frontend development and an eagerness to learn. Each project showcases my evolving skillset and the dedication I bring to the table.
@@ -23,7 +20,9 @@ const Landing = () => {
           </p>
         </div>
       </div>
-      <WebdevLogos />
+      <p></p>
+        <WebdevLogos />
+        <CommandPrompt />
     </section>
   )
 }

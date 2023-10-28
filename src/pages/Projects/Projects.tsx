@@ -3,20 +3,22 @@ import Kanban from "../../assets/images/projects/kanban_gray.png";
 import Audiophile from "../../assets/images/projects/audiophile_gray.png";
 import Feedback from "../../assets/images/projects/feedback_gray.png";
 import TechButton from "./TechButton";
+import PageHeading from "../../components/headings/PageHeading";
+import ProjectHeading from "./ProjectHeading";
 
 const Projects = () => {
   return (
-    <section className='min-h-screen flex flex-col gap-20 items-center bg-gray-700 pt-[100px]'>
+    <section className='min-h-screen flex flex-col gap-20 items-center bg-lightgray pt-[100px] border-b border-solid border-mediumGray'>
       <div id="page-3">
-        <h2 className="text-[3rem]">Recent Work</h2>
+        <PageHeading text="Recent Works"/>
       </div>
       <div className="flex flex-wrap justify-center gap-6 w-[900px]">
-        <div className="w-[400px] flex flex-col gap-6">
+        <div className="w-[400px] flex flex-col gap-6 text-mediumGray">
           <div className="w-[400px] h-[170px] p-1 bg-gray-500 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
-            <img src={LinkSharing} alt="" className="w-full h-full rounded-lg"/>
+            <img src={LinkSharing} alt="Project that lets user share links" className="w-full h-full rounded-lg"/>
           </div>
           <div className="flex flex-col gap-3 font-fourth w-[400px]">
-            <h2 className="font-bold text-[1.25rem]">Link-Sharing App</h2>
+            <ProjectHeading text="Link Sharing App"/>
             <p>React project that lets users create own links from relevant platforms and be able to share these. </p>
             <div className="flex gap-2">
               <TechButton text="React"/>
@@ -24,42 +26,43 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="w-[400px] flex flex-col gap-6">
+        <div className="w-[400px] flex flex-col gap-6 text-mediumGray">
           <div className="w-[400px] h-[170px] p-1 bg-gray-500 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
-            <img src={LinkSharing} alt="" className="w-full h-full rounded-lg"/>
+            <img src={Kanban} alt="Project that is a Kanban app" className="w-full h-full rounded-lg"/>
           </div>
           <div className="flex flex-col gap-3 font-fourth w-[400px]">
-            <h2 className="font-bold text-[1.25rem]">Link-Sharing App</h2>
+            <ProjectHeading text="Kanban"/>
             <p>React project that lets users create own links from relevant platforms and be able to share these. </p>
             <div className="flex gap-2">
               <TechButton text="React"/>
-              <TechButton text="Styled Components"/>
+              <TechButton text="Tailwind"/>
             </div>
           </div>
         </div>
-        <div className="w-full flex gap-6">
+        <div className="w-[400px] flex flex-col gap-6 text-mediumGray">
           <div className="w-full h-[170px] p-1 bg-gray-500 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
-            <img src={LinkSharing} alt="" className="w-full h-full rounded-lg"/>
+            <img src={Audiophile} alt="Project that is a webshop audio site" className="w-full h-full rounded-lg"/>
           </div>
           <div className="flex flex-col gap-3 font-fourth w-full">
-            <h2 className="font-bold text-[1.25rem]">Link-Sharing App</h2>
-            <p>React project that lets users create own links from relevant platforms and be able to share these. </p>
+            <ProjectHeading text="Audiophile E-commerce"/>
+            <p className="text-mediumGray">React project that lets users create own links from relevant platforms and be able to share these. </p>
             <div className="flex gap-2">
               <TechButton text="React"/>
-              <TechButton text="Styled Components"/>
+              <TechButton text="Tailwind"/>
             </div>
           </div>
         </div>
-        <div className="w-full flex gap-6">
+        <div className="w-[400px] flex flex-col gap-6 text-mediumGray">
           <div className="w-full h-[170px] p-1 bg-gray-500 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
-            <img src={LinkSharing} alt="" className="w-full h-full rounded-lg"/>
+            <img src={Feedback} alt="Project that focuses on user feedback" className="w-full h-full rounded-lg"/>
           </div>
           <div className="flex flex-col gap-3 font-fourth w-full">
-            <h2 className="font-bold text-[1.25rem]">Link-Sharing App</h2>
+            <ProjectHeading text="Product Feedback App"/>
             <p>React project that lets users create own links from relevant platforms and be able to share these. </p>
             <div className="flex gap-2">
               <TechButton text="React"/>
-              <TechButton text="Styled Components"/>
+              <TechButton text="Tailwind"/>
+              <TechButton text="Typescript"/>
             </div>
           </div>
         </div>

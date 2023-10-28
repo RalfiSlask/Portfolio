@@ -15,7 +15,7 @@ export default {
       colors: {
         "primary": "",
         "secondary": "",
-        "greenColor": "#4F8A10",
+        "lightgray": "#d1d0d0",
         "mediumGray": "#14303f"
       }
     },

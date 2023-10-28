@@ -1,11 +1,11 @@
-
+import PageHeading from "../../components/headings/PageHeading"
 
 
 const About = () => {
   return (
-    <section id="page-2" className='min-h-screen flex flex-col items-center pt-[100px] relative'>
+    <section id="page-2" className='min-h-screen flex flex-col bg-lightgray items-center pt-[100px] relative border-b border-solid border-mediumGray'>
       <div>
-        <h2 className="text-[3rem]">Technical Skills</h2>
+        <PageHeading text="About"/>
         <div>
           <ul>
             <label>Frontend Development</label>
