@@ -70,17 +70,18 @@ body, html {
   pointer-events: none;
   transition: transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
   z-index: 1000;
-  box-shadow: 0 0 6px green;
+  box-shadow: 0 0 6px #14303f;
 }
 
 h1, h2 {
-  font-family: "Fira Code", monospace;
+  /* font-family: 'Fira Code', monospace; */
+  font-family: "Nunito", sans-serif;
 }
 
 .custom-cursor.active {
   width: 100px;
   height: 100px;
-  box-shadow: 0 0 12px green;
+  box-shadow: 0 0 12px #14303f;
 }
 
 .custom-cursor::before {
@@ -144,7 +145,7 @@ h1, h2 {
 
 .nav-container {
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 2%;
   transform: translateY(-50%);
   display: flex;
@@ -154,13 +155,13 @@ h1, h2 {
   z-index: 10; /* Ensure it's above other elements */
 }
 .nav-container .nav-square {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background-color: white;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
   transform: scale(1); /* Start with normal scale */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* subtle shadow */
   border-radius: 50%; /* Default as circle */
 }
 .nav-container .nav-square:hover {
@@ -170,7 +171,7 @@ h1, h2 {
 }
 
 .nav-square.active {
-  background-color: green;
+  background-color: #14303f;
   transform: scale(1.2); /* Scaled up more than on hover */
   border: 2px solid white; /* White border for distinction */
   box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); /* Colorful shadow for active state */

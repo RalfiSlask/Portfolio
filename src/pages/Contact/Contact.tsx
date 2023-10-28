@@ -2,7 +2,7 @@ import ContactForm from "./ContactForm"
 
 const Contact = () => {
   return (
-    <section id="page-4" className="flex justify-center min-h-screen">
+    <section id="page-4" className="flex justify-center min-h-screen bg-[#999999]">
       <div className=' flex flex-col gap-10 font-secondary'>
         <h2 className="text-[3rem] font-bold">Contact</h2>
         <p>Get in touch or shoot me an email directly on nilssonnarki@gmail.com</p>
