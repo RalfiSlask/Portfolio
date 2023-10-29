@@ -1,33 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const NavigationContainer: React.FC = () => {
-    const [activeSection, setActiveSection] = useState<string>("#page-1");
+interface NavigationContainerProps {
+    activeSection: string;
+    onNavClick: (sectionIndex: number) => void; 
+}
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScroll = window.scrollY;
-            const sections = ["#page-1", "#page-2", "#page-3", "#page-4"];
-        
-            for (let sectionId of sections) {
-                const section = document.querySelector(sectionId);
-                if (section && section instanceof HTMLElement) {  // check if section is an instance of HTMLElement
-                    const top = section.offsetTop;
-                    const height = section.offsetHeight;
-        
-                    if (currentScroll >= top && currentScroll < top + height) {
-                        setActiveSection(sectionId);
-                        break;
-                    }
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+const NavigationContainer: React.FC<NavigationContainerProps> = ({ activeSection, onNavClick }) => {
 
     return (
         <div className="nav-container">
@@ -40,6 +18,7 @@ const NavigationContainer: React.FC = () => {
                         if (section) {
                             section.scrollIntoView({ behavior: 'smooth' });
                         }
+                        onNavClick(index); 
                     }}
                 />
             ))}

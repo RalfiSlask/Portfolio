@@ -7,10 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "primary": "'Fira Code', monospace",
         "secondary": "'Roboto', sans-serif",
-        "third": "'Cardo', serif",
         "fourth": "'Nunito', sans-serif",
+        "third": "'Inconsolata', monospace"
       },
       colors: {
         "primary": "",

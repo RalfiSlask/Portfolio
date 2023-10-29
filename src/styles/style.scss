@@ -1,4 +1,4 @@
-@import "./vendor/reset";
+ @import "./vendor/reset";
 @import "_variables";
 
 * {
@@ -7,9 +7,15 @@
 
 body, html {
     overflow-y: auto;
+    color: green;
 }
 
 $mediumGray: #14303f;
+
+section {
+    min-height: 100vh;
+    width: 100%;
+}
 
 .custom-cursor {
     position: absolute;
@@ -64,36 +70,42 @@ h1, h2 {
     cursor: pointer; 
     display: inline-block; 
     padding-bottom: 4px;
-}
-
-.hoverable::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%; 
-    right: 50%; /* Using right along with left for the same effect */
-    width: auto; /* Width is now managed by left and right properties */
-    height: 1px;
-    background-color: white;
-    transition: left 0.3s ease-out, right 0.3s ease-out; /* Adjusting the transition to left and right */
-    z-index: -1;
-    border-radius: 1px 0 0 1px; /* Initial state with left edge rounded */
-}
-
-.hoverable:hover::before {
-    left: -10%; /* 10% extension on both sides */
-    right: -10%;
-    border-radius: 1px; /* All edges rounded on hover */
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%; 
+        right: 50%; 
+        width: auto; 
+        height: 1px;
+        background-color: white;
+        transition: left 0.3s ease-out, right 0.3s ease-out; 
+        z-index: -1;
+        border-radius: 1px 0 0 1px; 
+    }
+    &:hover::before {
+        left: -10%; 
+        right: -10%;
+        border-radius: 1px; 
+    }
 }
 
 .darkmode-toggle {
+    filter: drop-shadow(0 0 0.15rem black);
     transition: transform 0.3s ease;
+    &:hover {
+        transform: scale(1.2) 
+    }
 }
 
-.darkmode-toggle:hover {
-    transform: rotate(180deg);  /* Rotates the icon by 180 degrees */
+.M-logo {
+    filter: drop-shadow(0 0 0.05rem black);
+    transition: transform 0.3s ease;
+    &:hover {
+        transform: scale(1.2)
+    }
 }
-  
+
 .nav-container {
     position: fixed;
     top: 30%;
@@ -102,21 +114,21 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Increased gap for better visibility when scaled */
-    z-index: 10; /* Ensure it's above other elements */
+    gap: 20px; 
+    z-index: 10; 
     .nav-square {
         width: 12px;
         height: 12px;
         background-color: white;
         cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
-        transform: scale(1); /* Start with normal scale */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* subtle shadow */
-        border-radius: 50%; /* Default as circle */
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+        transform: scale(1); 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+        border-radius: 50%; 
         &:hover {
-            background-color: #888; /* Darker shade on hover */
-            transform: scale(1.1); /* Slightly scaled up on hover */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Enhance shadow on hover */
+            background-color: #888; 
+            transform: scale(1.1); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
         }
     }
 }
