@@ -12,10 +12,18 @@ export default {
         "third": "'Inconsolata', monospace"
       },
       colors: {
-        "primary": "",
-        "secondary": "",
-        "lightgray": "#d1d0d0",
-        "mediumGray": "#14303f"
+        "mainBG": "#EAEDED",
+        "secBG": "#8A8D91",
+        "thirdBG": "#54585A",
+        "Headings": "#33363A",
+        "textColor": "#1C1E21",
+      
+        // Noir
+        "noir-mainBG": "#2B2C2F",
+        "noir-secBG": "#18191B",
+        "noir-H": "#6D7074",
+        "noir-thirdBG": "#0D0E10",
+        "noir-text": "#424547",
       }
     },
 

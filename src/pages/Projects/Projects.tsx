@@ -14,7 +14,7 @@ const Projects = () => {
       </div>
       <div className="flex flex-wrap justify-center gap-6 w-[900px]">
         <div className="w-[400px] flex flex-col gap-6 text-mediumGray">
-          <div className="w-[400px] h-[170px] p-1 bg-gray-500 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
+          <div className="w-[400px] h-[170px] p-1border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
             <img src={LinkSharing} alt="Project that lets user share links" className="w-full h-full rounded-lg"/>
           </div>
           <div className="flex flex-col gap-3 font-fourth w-[400px]">
@@ -27,7 +27,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="w-[400px] flex flex-col gap-6 text-mediumGray">
-          <div className="w-[400px] h-[170px] p-1 bg-gray-500 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
+          <div className="w-[400px] h-[170px] p-1 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
             <img src={Kanban} alt="Project that is a Kanban app" className="w-full h-full rounded-lg"/>
           </div>
           <div className="flex flex-col gap-3 font-fourth w-[400px]">
@@ -40,7 +40,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="w-[400px] flex flex-col gap-6 text-mediumGray">
-          <div className="w-full h-[170px] p-1 bg-gray-500 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
+          <div className="w-full h-[170px] p-1  border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
             <img src={Audiophile} alt="Project that is a webshop audio site" className="w-full h-full rounded-lg"/>
           </div>
           <div className="flex flex-col gap-3 font-fourth w-full">
@@ -53,7 +53,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="w-[400px] flex flex-col gap-6 text-mediumGray">
-          <div className="w-full h-[170px] p-1 bg-gray-500 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
+          <div className="w-full h-[170px] p-1 border border-solid border-mediumGray rounded-lg flex justify-center items-center cursor-pointer">
             <img src={Feedback} alt="Project that focuses on user feedback" className="w-full h-full rounded-lg"/>
           </div>
           <div className="flex flex-col gap-3 font-fourth w-full">

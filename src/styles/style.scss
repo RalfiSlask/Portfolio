@@ -1,5 +1,9 @@
- @import "./vendor/reset";
-@import "_variables";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./vendor/reset";
+@import "variables";
 
 * {
     box-sizing: border-box;
@@ -7,15 +11,36 @@
 
 body, html {
     overflow-y: auto;
-    color: green;
+    overflow-x: hidden;
 }
-
-$mediumGray: #14303f;
 
 section {
     min-height: 100vh;
     width: 100%;
+    background: $mainBG;
 }
+
+p {
+    color: $textColor;
+}
+
+h1, h2, h3, h4 {
+    color: $Headings;
+}
+
+button {
+    background: $thirdBG;
+    border: 3px solid $secBG;
+}
+
+#tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* To keep it behind other content */
+  }
 
 .custom-cursor {
     position: absolute;
@@ -27,7 +52,7 @@ section {
     pointer-events: none;
     transition: transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
     z-index: 1000; 
-    box-shadow: 0 0 6px $mediumGray;
+    box-shadow: 0 0 6px gray;
 }
 
 h1, h2 {
@@ -35,10 +60,19 @@ h1, h2 {
     font-family: 'Nunito', sans-serif;
 }
 
+
+/* #page-1 {
+    background-image: url("../assets/images/concrete-wall.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+} */
+
 .custom-cursor.active {
     width: 100px;
     height: 100px;
-    box-shadow: 0 0 12px $mediumGray;
+    box-shadow: 0 0 12px black;
 }
 
 .custom-cursor::before {
@@ -134,7 +168,7 @@ h1, h2 {
 }
 
 .nav-square.active {
-        background-color: $mediumGray;
+        background-color: gray;
         transform: scale(1.2); /* Scaled up more than on hover */
         border: 2px solid white; /* White border for distinction */
         box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); /* Colorful shadow for active state */

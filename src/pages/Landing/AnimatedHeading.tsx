@@ -9,14 +9,14 @@ const AnimatedHeading = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setStartTyping(true);
-        }, 500);
+        }, 800);
         return () => clearTimeout(timer);
     }, []);
 
     return (
         <div className='w-full h-[110px]'>
             {startTyping && 
-                <p className='text-[1.75rem] text-black font-fourth'>
+                <p className='text-[1.75rem] font-fourth text-textColor'>
                     <Typewriter 
                         text="Hi, I'm"
                         onFinished={() => {
@@ -28,7 +28,7 @@ const AnimatedHeading = () => {
                 </p>
             }
             {isIntroDone &&
-                <h1 className="text-[3rem] text-mediumGray font-bold">
+                <h1 className="text-[3rem] font-bold text-Headings">
                     <Typewriter 
                         text="Matthias Nilsson"
                         onFinished={() => {
