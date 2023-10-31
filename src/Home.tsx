@@ -8,12 +8,18 @@ import About from "./pages/About/About"
 import FullPageScroll from "./components/FullPageScroll";
 import SocialNavbar from "./SocialNavbar"
 import { useState, useEffect } from "react";
+import FirstScreen from "./FirstScreen"
 import Particles from "react-tsparticles"
 import { loadFull } from "tsparticles";
 
 const Home = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [showFirstScreen, setShowFirstScreen] = useState(true);
   const sections = ["#page-1", "#page-2", "#page-3", "#page-4"];
+
+  const handleFadeComplete = () => {
+    setShowFirstScreen(true);
+  };
 
   useEffect(() => {
     console.log("index: ", currentSectionIndex)
@@ -21,6 +27,7 @@ const Home = () => {
 
   return (
     <main>
+      {showFirstScreen && <FirstScreen />}
       <Header />
       <CustomCursor />
       <Particles 
