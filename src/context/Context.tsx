@@ -6,28 +6,25 @@ type ContextValueProps = {
     currentSectionIndex: number,
     setCurrentSectionIndex: React.Dispatch<React.SetStateAction<number>>,
     sections: string[];
-    clickingOnNav: (sectionIndex: number) => void;
+    mode: {
+        gray: boolean;
+        black: boolean;
+        color: boolean;
+    };
 }
 
 const Context = createContext<ContextValueProps | undefined>(undefined);
 
 export const ContextProvider: React.FC<ContextProps> = ( { children } ) => {
     const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+    const [mode, setMode] = useState({gray: true, black: false, color: false});
     const sections = ["#page-1", "#page-2", "#page-3", "#page-4"];
-
-    useEffect(() => {
-        console.log(currentSectionIndex)
-    }, [currentSectionIndex])
-
-    const clickingOnNav = (sectionIndex: number) => {
-        setCurrentSectionIndex(sectionIndex)
-    }
 
     const contextValue: ContextValueProps = {
         currentSectionIndex: currentSectionIndex,
         setCurrentSectionIndex: setCurrentSectionIndex,
         sections: sections,
-        clickingOnNav: clickingOnNav
+        mode: mode,
     };
 
 return (

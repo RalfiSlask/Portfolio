@@ -1,16 +1,37 @@
-import GithubLogo from "./assets/icons/social/github_gray.svg";
-import LinkedinLogo from "./assets/icons/social/linkedin_gray .svg";
-import FrontendLogo from "./assets/icons/social/frontendmentor_gray.svg";
+import GithubLogo from "./assets/icons/social/github.svg";
+import LinkedinLogo from "./assets/icons/social/linkedin.svg";
+import FrontendLogo from "./assets/icons/social/frontend.png";
+import SocialIcon from "./SocialIcon";
+import { useContext } from "react";
+import Context from "./context/Context";
+
+const SocialArray = [
+  {id: 1, logo: GithubLogo, alt: "github logo, a black spider", link: "https://github.com/RalfiSlask"},
+  {id: 2, logo: LinkedinLogo, alt: "linkedin logo, in text", link: "https://www.linkedin.com/in/matthias-nilsson-68023b294/"},
+  {id: 3, logo: FrontendLogo, alt: "fontendmentor.io logo", link: "https://www.frontendmentor.io/profile/RalfiSlask"}
+];
 
 const SocialNavbar = () => {
+  const context = useContext(Context);
+
+  if(context === undefined) {
+    throw new Error("Does not exist in Provider")
+  }
+
+  const { mode } = context;
+
   return (
     <div className='fixed flex gap-4 z-20 bottom-16 left-[2%]'>
-        <img src={GithubLogo} width="25" alt="github logo, a black spider" className="fill-[green] text-green-200"/>
-        <img src={LinkedinLogo} width="25" alt="linkedin logo, in text" />
-        <div className="bg-black rounded-full w-[25px] h-[25px] flex justify-center items-center">
-            <img src={FrontendLogo} width="25" alt="fontendmentor.io logo" className="w-[80%] h-[80%] object-cover"/>
-        </div>
-        
+      {SocialArray.map((icon => {
+        const { id, logo, alt, link } = icon;
+        return (
+         <SocialIcon 
+          key={id} 
+          logo={`${mode.gray ? logo.replace(".svg", "_gray.svg").replace(".png", "_gray.png") : logo}`}
+          alt={alt}
+          link={link}
+        />
+         )}))}        
     </div>
   )
 }

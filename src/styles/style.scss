@@ -80,9 +80,6 @@ h1, h2, p {
     font-family: 'Nunito', sans-serif;
 }
 
-
-
-
 /* #page-1 {
     background-image: url("../assets/images/concrete-wall.jpg");
     background-repeat: no-repeat;
@@ -173,8 +170,8 @@ h1, h2, p {
     gap: 20px; 
     z-index: 10; 
     .nav-square {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
         background-color: white;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 

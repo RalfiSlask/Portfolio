@@ -45,9 +45,9 @@ const FirstScreen = ( ) => {
         <div className={`${!textVisible ? 'fade-out' : ''} flex flex-col gap-10 items-center `}>
             <div className="flex gap-4 font-bold items-end">
                 <h2 className={`font-bold text-[1.85rem]`}>Matthias Nilsson</h2>
-                <p className="font-bold text-[1.25rem] text-textColor font-first">Developer</p>
+                <p className="font-bold text-[1.25rem] text-textColor font-first">Portfolio</p>
             </div>
-            <p className="font-third text-[1rem] font-bold w-[500px] text-center">PS C:\Users\Matthias\&gt;  
+            <p className="font-third text-[1rem] font-bold w-[500px] text-center h-20"> 
                 {npmStart && <Typewriter 
                     text=" npm start "
                     speed={100}

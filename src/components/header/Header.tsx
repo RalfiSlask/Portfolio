@@ -10,7 +10,7 @@ const Header = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsActive(true)
-    }, 100)
+    }, 4000)
   }, [])
 
   return (
