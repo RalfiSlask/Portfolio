@@ -43,7 +43,7 @@ const FirstScreen = ( ) => {
     return (
       <section className={`first-screen flex flex-col gap-10 items-center ${!screenVisible ? 'fade-out' : ''}`}>
         <div className={`${!textVisible ? 'fade-out' : ''} flex flex-col gap-10 items-center `}>
-            <div className="flex gap-4 font-bold items-end">
+            <div className="flex gap-4 font-bold items-baseline">
                 <h2 className={`font-bold text-[1.85rem]`}>Matthias Nilsson</h2>
                 <p className="font-bold text-[1.25rem] text-textColor font-first">Portfolio</p>
             </div>

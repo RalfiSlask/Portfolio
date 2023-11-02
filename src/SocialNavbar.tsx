@@ -21,7 +21,7 @@ const SocialNavbar = () => {
   const { mode } = context;
 
   return (
-    <div className='fixed flex gap-4 z-20 bottom-16 left-[2%]'>
+    <div className='flex flex-col gap-4'>
       {SocialArray.map((icon => {
         const { id, logo, alt, link } = icon;
         return (
