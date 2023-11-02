@@ -23,7 +23,10 @@ const HeaderNavigationContainer = () => {
 
     return (
         <div className="flex flex-col gap-10 items-center text-textColor">
+            <div className="w-[50px] h-[50px] flex justify-center items-center">
             <img onClick={handleClickOnDarkMode} src={darkmodeLogo} className="cursor-pointer darkmode-toggle" width="40" height="40" alt="circle with one side black and the other white representing a toggle darkmode logo" />
+            </div>
+           
             <nav className="flex items-center">
                 <ul className="flex flex-col gap-10 items-center">
                     {navItems.map(item => <HeaderNavItem key={item.id} text={item.text} href={item.href}/>)}

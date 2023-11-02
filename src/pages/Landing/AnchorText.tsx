@@ -5,9 +5,7 @@ type AnchorPropsType = {
 
 const AnchorText: React.FC<AnchorPropsType> = ( { text, href } ) => {
   return (
-        <span className="text-black font-bold hover:text-gray-400 cursor-pointer">
-            <a href={href}>{text}</a>
-        </span>
+      <a className="hoverable text-black font-bold cursor-pointer hover:text-secBG" href={href}>{text}</a>
   )
 }
 

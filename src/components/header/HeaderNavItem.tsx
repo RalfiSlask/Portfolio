@@ -5,7 +5,7 @@ type NavItemProps = {
 
 const HeaderNavItem: React.FC<NavItemProps> = ( { text, href } ) => {
   return (
-    <li className="hoverable">
+    <li>
         <a href={href} className="text-[1rem] font-fourth">{text}</a>
     </li>
   )
