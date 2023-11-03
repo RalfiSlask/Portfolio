@@ -214,6 +214,37 @@ button {
   z-index: -1;
 }
 
+.nav-item {
+  position: relative;
+  list-style: none;
+}
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-family: "YourFont", sans-serif;
+  transition: color 0.3s;
+}
+.nav-item a:hover {
+  color: #555;
+}
+.nav-item .dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: transparent;
+  z-index: 1000;
+}
+.nav-item .dropdown li {
+  min-height: 40px;
+}
+.nav-item .dropdown li a {
+  display: block;
+  padding: 10px;
+}
+.nav-item .dropdown li a:hover {
+  color: #777;
+}
 .hoverable {
   position: relative;
   cursor: pointer;

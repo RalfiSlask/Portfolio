@@ -50,7 +50,7 @@ export const particlesCode: ISourceOptions = {
             value: 30, // Fewer particles
         },
         opacity: {
-            value: 0.8, // Less visible
+            value: 1, // Less visible
         },
         shape: {
             type: "char",
@@ -59,7 +59,7 @@ export const particlesCode: ISourceOptions = {
                     value: ["{ }", "< >", "< />"],
                     font: "Verdana",
                     style: "", 
-                    weight: "500", // From 100 to 900
+                    weight: "600", // From 100 to 900
                 },
             },
         },

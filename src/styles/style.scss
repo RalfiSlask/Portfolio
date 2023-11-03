@@ -82,6 +82,57 @@ button {
     height: 100vh;
     z-index: -1; 
 }
+.nav-item {
+    position: relative;
+    list-style: none;
+  
+    a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      font-family: 'YourFont', sans-serif;
+      transition: color 0.3s;
+  
+      &:hover {
+        color: #555;
+      }
+    }
+  
+    .dropdown {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: transparent;
+      // opacity: 0;
+      // visibility: hidden;
+      // transform: scaleY(0);
+      // transform-origin: top;
+      // transition: transform 0.3s ease-in-out, visibility 0.3s, opacity 0.3s;
+      z-index: 1000;
+  
+      li {
+        min-height: 40px; // Adjust the min-height as needed for your design
+  
+        a {
+          display: block; // Ensure the anchor tag fills the li for better clickability
+          padding: 10px; // Optional: Adjust padding as needed
+  
+          &:hover {
+            color: #777;
+          }
+        }
+      }
+    }
+  
+    &.dropdown-open {
+      .dropdown {
+        // opacity: 1;
+        // visibility: visible;
+        // transform: scaleY(1);
+      }
+    }
+  }
+  
 
 .hoverable {
     position: relative;

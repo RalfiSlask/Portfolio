@@ -12,6 +12,8 @@ import TSLogo from "../../assets/icons/webdev/typescript_gray.png";
 import GitLogo from "../../assets/icons/webdev/git_gray.png";
 import VSCLogo from "../../assets/icons/webdev/vsc_gray.png";
 import TailwindLogo from "../../assets/icons/webdev/tailwind_gray.png";
+import FigmaLogo from "../../assets/icons/webdev/Figma_gray.png";
+import BootstrapLogo from "../../assets/icons/webdev/Bootstrap_gray.png";
 import CategoryList from "./CategoryList";
 
 const CategoriesArray = [
@@ -20,7 +22,7 @@ const CategoriesArray = [
       {id: 1, skill: "Git", logo: GitLogo},
       {id: 2, skill: "VSC", logo: VSCLogo},
       {id: 3, skill: "Node", logo: NodeLogo},
-      {id: 4, skill: "Figma", logo: NodeLogo},
+      {id: 4, skill: "Figma", logo: FigmaLogo},
     ]
   }, 
   {
@@ -28,7 +30,7 @@ const CategoriesArray = [
       {id: 5, skill: "CSS", logo: CSSLogo},
       {id: 6, skill: "Tailwind", logo: TailwindLogo},
       {id: 7, skill: "Sass", logo: SassLogo},
-      {id: 8, skill: "Bootstrap", logo: SassLogo}
+      {id: 8, skill: "Bootstrap", logo: BootstrapLogo}
     ]
   },
   {
