@@ -152,12 +152,12 @@ body, html {
   overflow-x: hidden;
 }
 
-body {
-  font-family: "Nunito", sans-serif;
-}
-
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
 }
 
 section {
@@ -214,32 +214,6 @@ button {
   z-index: -1;
 }
 
-.nav-item {
-  list-style: none;
-}
-.nav-item a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-.nav-item a:hover {
-  color: #555;
-}
-.nav-item .dropdown {
-  background-color: transparent;
-  z-index: 1000;
-}
-.nav-item .dropdown li {
-  min-height: 40px;
-}
-.nav-item .dropdown li a {
-  display: block;
-  padding: 10px;
-}
-.nav-item .dropdown li a:hover {
-  color: #777;
-}
 .hoverable {
   position: relative;
   cursor: pointer;

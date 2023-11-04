@@ -3,16 +3,9 @@ import { useState } from "react";
 import owlLogo from "../../assets/icons/dark2.svg";
 
 const navItems = [
-  {
-    id: 1,
-    text: "Menu",
-    href: "#",
-    dropdownItems: [
       { id: 1, text: "About", href: "#page-2" },
       { id: 2, text: "Projects", href: "#page-3" },
       { id: 3, text: "Contact", href: "#page-4" },
-    ],
-  },
 ];
 
 const HeaderNavigationContainer = () => {
@@ -44,17 +37,19 @@ const HeaderNavigationContainer = () => {
         />
       </div>
 
-      <nav className="flex items-center flex-col gap-10 w-[100px]">
-          {navItems.map((item) => (
-            <HeaderNavItem
-              key={item.id}
-              text={item.text}
-              href={item.href}
-              dropdownItems={item.dropdownItems}
-              dropdownOpen={dropdownOpen}
-              toggleDropdown={toggleDropdown}
-            />
-          ))}
+      <nav className="flex items-end flex-col gap-10 w-[100px]">
+            <p className="text-[1rem] font-fourth" onClick={toggleDropdown}>
+                Menu
+            </p>
+           {dropdownOpen && <ul className="dropdown flex flex-col gap-8">
+              {navItems.map((item) => (
+                <HeaderNavItem
+                  key={item.id}
+                  text={item.text}
+                  href={item.href}
+                />
+              ))}
+            </ul>}
       </nav>
     </div>
   );
