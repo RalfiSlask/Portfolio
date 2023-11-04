@@ -83,14 +83,12 @@ button {
     z-index: -1; 
 }
 .nav-item {
-    position: relative;
     list-style: none;
   
     a {
       text-decoration: none;
       color: #333;
       font-size: 1rem;
-      font-family: 'YourFont', sans-serif;
       transition: color 0.3s;
   
       &:hover {
@@ -99,9 +97,6 @@ button {
     }
   
     .dropdown {
-      position: absolute;
-      left: 0;
-      top: 100%;
       background-color: transparent;
       // opacity: 0;
       // visibility: hidden;

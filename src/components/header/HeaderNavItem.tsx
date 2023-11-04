@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react'
 
 type NavItemProps = {
     text: string;
@@ -12,12 +12,12 @@ const HeaderNavItem: React.FC<NavItemProps> = ({ text, href, dropdownItems, drop
     const hasDropdown = dropdownItems && dropdownItems.length > 0;
 
     return (
-        <li className="nav-item">
+        <>
             <a href={href} className="text-[1rem] font-fourth" onClick={hasDropdown ? toggleDropdown : undefined}>
                 {text}
             </a>
             {hasDropdown && dropdownOpen && (
-                <ul className="dropdown">
+                <ul className="dropdown flex flex-col gap-4">
                     {dropdownItems.map((dropdownItem) => (
                         <li key={dropdownItem.id} className="whitespace-no-wrap">
                             <a href={dropdownItem.href} className="block px-4 py-2 text-[1rem]">
@@ -27,7 +27,7 @@ const HeaderNavItem: React.FC<NavItemProps> = ({ text, href, dropdownItems, drop
                     ))}
                 </ul>
             )}
-        </li>
+        </>
     );
 };
 

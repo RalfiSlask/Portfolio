@@ -44,8 +44,7 @@ const HeaderNavigationContainer = () => {
         />
       </div>
 
-      <nav className="flex items-center">
-        <ul className="flex flex-col gap-10 items-center">
+      <nav className="flex items-center flex-col gap-10 w-[100px]">
           {navItems.map((item) => (
             <HeaderNavItem
               key={item.id}
@@ -56,7 +55,6 @@ const HeaderNavigationContainer = () => {
               toggleDropdown={toggleDropdown}
             />
           ))}
-        </ul>
       </nav>
     </div>
   );
