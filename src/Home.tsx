@@ -29,7 +29,7 @@ import RightSidebar from "./RightSidebar";
 const Home = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [showFirstScreen, setShowFirstScreen] = useState(true);
-  const [particlesOptions, setParticlesOptions] = useState(particlesCode);
+  const [particlesOptions, setParticlesOptions] = useState(particlesRain);
   const sections = ["#page-1", "#page-2", "#page-3", "#page-4"];
   
   const handleFadeComplete = () => {

@@ -1,19 +1,20 @@
-
-import BrushLogo from "../../assets/icons/tools/brush.svg";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import HeaderNavigationContainer from "./HeaderNavigationContainer";
 import HeaderLogo from "./HeaderLogo";
 import { useDrag } from "react-dnd";
 import { ItemTypes } from "../../utils/types";
+import Context from "../../context/Context";
+import seasonsLogo from "../../assets/icons/seasons.png";
 
 const Header = () => {
-  const [isActive, setIsActive] = useState(false);
+  const context = useContext(Context);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsActive(true)
-    }, 4000)
-  }, [])
+  if(context === undefined) {
+    throw new Error ("Does not exist in Provider") 
+  }
+
+  const { isActive } = context;
+
 
   const [{ isDragging }, drag] = useDrag({
     type: ItemTypes.BRUSH,
@@ -24,16 +25,20 @@ const Header = () => {
   });
 
   return (
-    <header className={`${isActive ? "translate-y-0" : ""} pr-3 transform -translate-y-full transition-transform duration-1000 ease-out h-20 p-0 flex items-center justify-between fixed right-20 z-50 text-mediumGray`}>
-      <div className="flex items-center gap-4">
+    <header className={`${isActive ? "translate-y-0" : ""} pr-3 transform -translate-y-full transition-transform duration-1000 ease-out px-8 h-20 w-full p-0 flex items-center justify-between fixed z-50 text-mediumGray`}>
+      <div className="flex gap-4">
+        <HeaderLogo /> 
+        <img src={seasonsLogo} width="50" height="auto" alt="" className="object-cover"/>
+      </div>
+      
         <div>
           <ul className="flex gap-1 items-center mr-20">
             <li ref={drag} style={{ opacity: isDragging ? 0.4 : 1 }}>
-              <img src={BrushLogo} width="40" height="40" alt="paint brush" className="cursor-pointer"/>
+              {/* <img src={BrushLogo} width="40" height="40" alt="paint brush" className="cursor-pointer"/> */}
             </li>
           </ul>
         </div>
-      </div>
+      <HeaderNavigationContainer />
     </header>
   )
 }

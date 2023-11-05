@@ -55,6 +55,12 @@ table {
   border-spacing: 0;
 }
 
+/* 
+$mainBG: #EAEDED;
+$secBG: #acafb3;
+$thirdBG: #54585A;
+$Headings: #33363A;
+$textColor: #1C1E21; */
 /* Custom Cursor */
 .custom-cursor {
   position: absolute;
@@ -99,7 +105,7 @@ table {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #EAEDED;
+  background-color: #F3ECE0;
   z-index: 999;
   font-size: 3rem;
   transition: opacity 1s ease, background-color 1s ease;
@@ -123,7 +129,7 @@ table {
 .nav-container .nav-square {
   width: 10px;
   height: 10px;
-  background-color: white;
+  background-color: #D17A45;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transform: scale(1);
@@ -131,14 +137,14 @@ table {
   border-radius: 50%;
 }
 .nav-container .nav-square:hover {
-  background-color: #888;
+  background-color: #B8B19F;
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .nav-container .nav-square.active {
-  background-color: gray;
+  background-color: #F3ECE0;
   transform: scale(1.2); /* Scaled up more than on hover */
-  border: 2px solid white; /* White border for distinction */
+  border: 2px solid #A45D5D; /* White border for distinction */
   box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); /* Colorful shadow for active state */
   border-radius: 4px; /* Transforming it to a soft square */
 }
@@ -160,27 +166,43 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-section {
+.about, .projects, .contact {
   min-height: 100vh;
   width: 100%;
-  /*   background: $mainBG; */
+  background: #F3ECE0;
+  z-index: 0;
 }
 
-.background-element {
-  background: green;
+.sidebarline {
+  background: #B8B19F;
 }
 
-p {
-  color: #1C1E21;
+a {
+  color: #B8B19F;
+}
+
+p, li {
+  color: #0e0803;
+}
+
+.social-icon {
+  fill: red;
 }
 
 h1, h2, h3, h4 {
-  color: #33363A;
+  color: #A45D5D;
+}
+
+.landing-lower {
+  background: #B8B19F;
+  width: 100%;
+  height: 100%;
+  flex: 1;
 }
 
 button {
-  background: #54585A;
-  border: 3px solid #acafb3;
+  background: #D17A45;
+  border: 3px solid #B8B19F;
 }
 
 /* Darkmode Logo */
@@ -201,17 +223,13 @@ button {
 }
 
 /* Particles */
-.particles-container {
-  z-index: 0;
-}
-
 #tsparticles {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+  width: 300px;
+  height: 300px;
+  z-index: 10;
 }
 
 .hoverable {

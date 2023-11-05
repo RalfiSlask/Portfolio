@@ -24,6 +24,7 @@ export const particlesRain: ISourceOptions = {
             },
         },
     },
+
     particles: {
         color: {
             value: "#000000", // Change to "#0077be" for blue raindrops if desired
@@ -31,13 +32,17 @@ export const particlesRain: ISourceOptions = {
         links: {
             enable: false,
         },
+
+        fullScreen: { enable: false },
+            /* all other options */
+
         move: {
             direction: "bottom",
             enable: true,
             outModes: {
                 default: "out",
             },
-            straight: false, // Slight deviation for a more natural look
+            straight: true, // Slight deviation for a more natural look
             speed: 0.5, // Slower movement for raindrops
         },
         number: {
@@ -45,16 +50,16 @@ export const particlesRain: ISourceOptions = {
                 enable: true,
                 area: 800,
             },
-            value: 100, // Increase for more raindrops
+            value: 30, // Increase for more raindrops
         },
         opacity: {
-            value: 0.6, // Slightly transparent like water
+            value: 0.3, // Slightly transparent like water
         },
         shape: {
             type: "circle", // Circular raindrops
         },
         size: {
-            value: { min: 0.5, max: 2.5 }, // Size variation for raindrops
+            value: { min: 2, max: 2.5 }, // Size variation for raindrops
         },
     },
     detectRetina: true,

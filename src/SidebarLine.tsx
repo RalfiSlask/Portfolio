@@ -1,8 +1,7 @@
 
 const SidebarLine = () => {
   return (
-    <div className='w-[2px] h-14 bg-secBG'>
-    </div>
+    <div className='sidebarline w-[2px] h-14'></div>
   )
 }
 

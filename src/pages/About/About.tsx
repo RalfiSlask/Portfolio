@@ -50,7 +50,7 @@ const CategoriesArray = [
 
 const About = () => {
   return (
-    <section id="page-2" className='background-element min-h-screen flex flex-col bg-lightgray items-center pt-[50px] gap-5 relative border-b border-solid border-mediumGray'>
+    <section id="page-2" className='about min-h-screen flex flex-col bg-lightgray items-center pt-[50px] gap-5 relative border-b border-solid border-mediumGray'>
       <PageHeading text="About"/>
       <div className="w-[800px] flex flex-col gap-4">
         <div className="w-full flex gap-4 items-center justify-center">

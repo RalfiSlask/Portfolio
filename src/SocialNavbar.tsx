@@ -27,7 +27,7 @@ const SocialNavbar = () => {
         return (
          <SocialIcon 
           key={id} 
-          logo={`${mode.gray ? logo.replace(".svg", "_gray.svg").replace(".png", "_gray.png") : logo}`}
+          logo={logo}
           alt={alt}
           link={link}
         />

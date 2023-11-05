@@ -25,7 +25,22 @@ const HeaderNavigationContainer = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10 items-center text-textColor">
+    <div className="flex gap-10 items-center text-textColor">
+     
+      <nav className="flex items-end gap-10">
+           {dropdownOpen && <ul className="dropdown flex gap-8">
+              {navItems.map((item) => (
+                <HeaderNavItem
+                  key={item.id}
+                  text={item.text}
+                  href={item.href}
+                />
+              ))}
+            </ul>}
+            <p className="text-[1rem] font-fourth" onClick={toggleDropdown}>
+                Menu
+            </p>
+      </nav>
       <div className="w-[50px] h-[50px] flex justify-center items-center">
         <img
           onClick={handleClickOnDarkMode}
@@ -36,21 +51,6 @@ const HeaderNavigationContainer = () => {
           alt="circle with one side black and the other white representing a toggle darkmode logo"
         />
       </div>
-
-      <nav className="flex items-end flex-col gap-10 w-[100px]">
-            <p className="text-[1rem] font-fourth" onClick={toggleDropdown}>
-                Menu
-            </p>
-           {dropdownOpen && <ul className="dropdown flex flex-col gap-8">
-              {navItems.map((item) => (
-                <HeaderNavItem
-                  key={item.id}
-                  text={item.text}
-                  href={item.href}
-                />
-              ))}
-            </ul>}
-      </nav>
     </div>
   );
 };

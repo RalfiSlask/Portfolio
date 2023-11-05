@@ -8,7 +8,7 @@ import ProjectHeading from "./ProjectHeading";
 
 const Projects = () => {
   return (
-    <section className='min-h-screen flex flex-col gap-20 items-center bg-lightgray pt-[100px] border-b border-solid border-mediumGray'>
+    <section className='projects min-h-screen flex flex-col gap-20 items-center bg-lightgray pt-[100px] border-b border-solid border-mediumGray'>
       <div id="page-3">
         <PageHeading text="Recent Works"/>
       </div>

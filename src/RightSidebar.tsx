@@ -1,6 +1,7 @@
 import NavigationContainer from "./components/NavigationContainer";
-import HeaderNavigationContainer from "./components/header/HeaderNavigationContainer";
 import SidebarLine from "./SidebarLine";
+import { useContext } from "react";
+import Context from "./context/Context";
 
 interface NavigationContainerProps {
     activeSection: string;
@@ -8,16 +9,21 @@ interface NavigationContainerProps {
 }
 
 const RightSidebar: React.FC<NavigationContainerProps> = ( { activeSection, onNavClick } ) => {
+  const context = useContext(Context);
+
+  if(context === undefined) {
+    throw new Error ("Does not exist in Provider") 
+  }
+
+  const { isActive } = context;
+
   return (
-    <div className='w-[200px] flex flex-col justify-between items-end min-h-screen fixed right-0 z-10 pt-2 pr-8'>
-         <HeaderNavigationContainer />
-         <div className='flex flex-col items-center gap-6'>
-          <NavigationContainer 
-            activeSection={activeSection}
-            onNavClick={onNavClick}
-          />
-          <SidebarLine />
-         </div>
+    <div className={`${isActive ? "translate-y-0" : "translate-y-full"} transition-transform duration-1000 ease-out w-[80px] flex flex-col justify-between items-center fixed right-0 bottom-0 z-10 pt-2 gap-6`}>
+        <NavigationContainer 
+          activeSection={activeSection}
+          onNavClick={onNavClick}
+        />
+        <SidebarLine />
     </div>
   )
 }

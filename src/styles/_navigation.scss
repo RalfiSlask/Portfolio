@@ -10,7 +10,7 @@
     .nav-square {
         width: 10px;
         height: 10px;
-        background-color: white;
+        background-color: $thirdBG;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
         transform: scale(1); 
@@ -18,15 +18,15 @@
         border-radius: 50%; 
 
         &:hover {
-            background-color: #888; 
+            background-color: $secBG; 
             transform: scale(1.1); 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
         }
 
         &.active {
-            background-color: gray;
+            background-color: $mainBG;
             transform: scale(1.2); /* Scaled up more than on hover */
-            border: 2px solid white; /* White border for distinction */
+            border: 2px solid $Headings; /* White border for distinction */
             box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); /* Colorful shadow for active state */
             border-radius: 4px; /* Transforming it to a soft square */
         }
