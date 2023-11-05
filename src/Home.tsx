@@ -30,6 +30,7 @@ const Home = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [showFirstScreen, setShowFirstScreen] = useState(true);
   const [particlesOptions, setParticlesOptions] = useState(particlesRain);
+  const [isAboutInView, setIsAboutInView] = useState(false);
   const sections = ["#page-1", "#page-2", "#page-3", "#page-4"];
   
   const handleFadeComplete = () => {
@@ -73,19 +74,15 @@ const [{ isOver }, drop] = useDrop({
         <Header />
        {/*  <CustomCursor />  */}
         <LeftSidebar />
-        <RightSidebar 
-            activeSection={sections[currentSectionIndex]}
-            onNavClick={index => setCurrentSectionIndex(index)}  
-        />
+        <RightSidebar />
         <FullPageScroll 
-            sections={[
+            sectionComponents={[
                 <Landing />,
-                <About />,
+                <About isInView={isAboutInView}/>,
                 <Projects />,
                 <Contact />
                 ]}
-            currentSectionIndex={currentSectionIndex}
-            onSectionChange={setCurrentSectionIndex}
+            onInViewChange={(index) => setIsAboutInView(index === 1)} // Update the state based on the index of the "About" section
             />
         </main>
   )

@@ -1,20 +1,21 @@
 import PageHeading from "../../components/headings/PageHeading";
-import MatteLogo from "../../assets/icons/Matte1_gray.png";
+import MatteLogo from "../../assets/icons/Matte1.png";
 import AboutInfo from "./AboutInfo";
-import VueLogo from "../../assets/icons/webdev/vue_gray.png";
-import ReactLogo from "../../assets/icons/webdev/react_gray.png";
-import HtmlLogo from "../../assets/icons/webdev/html_gray.png";
-import CSSLogo from "../../assets/icons/webdev/css_gray.png";
-import JSLogo from "../../assets/icons/webdev/js_gray.png";
-import NodeLogo from "../../assets/icons/webdev/node_gray.png";
-import SassLogo from "../../assets/icons/webdev/sass_gray.png";
-import TSLogo from "../../assets/icons/webdev/typescript_gray.png";
-import GitLogo from "../../assets/icons/webdev/git_gray.png";
-import VSCLogo from "../../assets/icons/webdev/vsc_gray.png";
-import TailwindLogo from "../../assets/icons/webdev/tailwind_gray.png";
-import FigmaLogo from "../../assets/icons/webdev/Figma_gray.png";
-import BootstrapLogo from "../../assets/icons/webdev/Bootstrap_gray.png";
+import VueLogo from "../../assets/icons/webdev/vue.png";
+import ReactLogo from "../../assets/icons/webdev/react.png";
+import HtmlLogo from "../../assets/icons/webdev/html.png";
+import CSSLogo from "../../assets/icons/webdev/css.png";
+import JSLogo from "../../assets/icons/webdev/js.png";
+import NodeLogo from "../../assets/icons/webdev/node.png";
+import SassLogo from "../../assets/icons/webdev/sass.png";
+import TSLogo from "../../assets/icons/webdev/typescript.png";
+import GitLogo from "../../assets/icons/webdev/git.png";
+import VSCLogo from "../../assets/icons/webdev/vsc.png";
+import TailwindLogo from "../../assets/icons/webdev/tailwind.png";
+import FigmaLogo from "../../assets/icons/webdev/Figma.png";
+import BootstrapLogo from "../../assets/icons/webdev/Bootstrap.png";
 import CategoryList from "./CategoryList";
+import { useEffect, useState } from "react";
 
 const CategoriesArray = [
   {
@@ -48,9 +49,23 @@ const CategoriesArray = [
   }
 ]
 
-const About = () => {
+const About: React.FC<{isInView: boolean}> = ( {isInView} ) => {
+  const [animate, setAnimate] = useState(false);
+
+  
+  useEffect(() => {
+    // Assuming you have a way to know when the "About" section is in view
+    if (isInView && !animate) {
+      setAnimate(true);
+    }
+  }, [isInView, animate]);
+
+
   return (
-    <section id="page-2" className='about min-h-screen flex flex-col bg-lightgray items-center pt-[50px] gap-5 relative border-b border-solid border-mediumGray'>
+    <section 
+      id="page-2" 
+      className={`about min-h-screen flex flex-col bg-lightgray items-center pt-[50px] gap-5 relative border-b border-solid border-mediumGray ${animate ? 'animate' : ''}`}
+    >
       <PageHeading text="About"/>
       <div className="w-[800px] flex flex-col gap-4">
         <div className="w-full flex gap-4 items-center justify-center">

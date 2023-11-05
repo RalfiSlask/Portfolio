@@ -12,6 +12,7 @@ type ContextValueProps = {
         color: boolean;
     };
     isActive: boolean;
+    onNavClick: (index: number) => void;
 }
 
 const Context = createContext<ContextValueProps | undefined>(undefined);
@@ -21,6 +22,14 @@ export const ContextProvider: React.FC<ContextProps> = ( { children } ) => {
     const [isActive, setIsActive] = useState(false);
     const [mode, setMode] = useState({gray: true, black: false, color: false});
     const sections = ["#page-1", "#page-2", "#page-3", "#page-4"];
+
+    useEffect(() => {
+        console.log(currentSectionIndex)
+    })
+
+    const onNavClick = (index: number) => {
+        setCurrentSectionIndex(index)
+    };
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -35,7 +44,8 @@ export const ContextProvider: React.FC<ContextProps> = ( { children } ) => {
         setCurrentSectionIndex: setCurrentSectionIndex,
         sections: sections,
         mode: mode,
-        isActive: isActive
+        isActive: isActive,
+        onNavClick: onNavClick,
     };
 
 return (

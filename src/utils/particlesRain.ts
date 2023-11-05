@@ -2,7 +2,7 @@ import type { ISourceOptions } from "tsparticles-engine";
 export const particlesRain: ISourceOptions = {
     background: {
         color: {
-            value: "#EAEDED",
+            value: "#F3ECE0",
         },
     },
     fpsLimit: 120,

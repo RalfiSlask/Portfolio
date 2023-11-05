@@ -1,24 +1,23 @@
-import React from 'react';
+import { useContext } from "react";
+import Context from "../context/Context"; 
 
-interface NavigationContainerProps {
-    activeSection: string;
-    onNavClick: (sectionIndex: number) => void; 
-}
+const NavigationContainer = () => {
+    const context = useContext(Context);
 
-const NavigationContainer: React.FC<NavigationContainerProps> = ({ activeSection, onNavClick }) => {
+    if (context === undefined) {
+        throw new Error("Does not exist in Provider")
+    }
+
+    const { sections, currentSectionIndex, setCurrentSectionIndex } = context;
 
     return (
         <div className="nav-container">
-            {["#page-1", "#page-2", "#page-3", "#page-4"].map((sectionId, index) => (
+            {sections.map((sectionId, index) => (
                 <div 
                     key={index} 
-                    className={`nav-square ${activeSection === sectionId ? "active" : ""}`} 
+                    className={`nav-square ${currentSectionIndex === index ? "active" : ""}`} 
                     onClick={() => {
-                        const section = document.querySelector(sectionId);
-                        if (section) {
-                            section.scrollIntoView({ behavior: 'smooth' });
-                        }
-                        onNavClick(index); 
+                        setCurrentSectionIndex(index); 
                     }}
                 />
             ))}
